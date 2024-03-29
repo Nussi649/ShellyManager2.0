@@ -1,0 +1,13 @@
+# Basierend auf dem offiziellen Node.js-Image
+FROM node:14
+
+# Arbeitsverzeichnis im Container setzen
+WORKDIR /app
+
+# Kopieren der Paketdefinitionsdateien
+COPY package*.json ./
+COPY node_modules ./node_modules 
+COPY src ./src
+
+# Den Befehl zum Starten der Anwendung definieren
+CMD ["node", "src/gateway/index.js"]

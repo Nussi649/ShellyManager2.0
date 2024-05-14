@@ -1,4 +1,4 @@
-const { fetch1PMData, fetchPMMiniData, fetchDimmer2Data } = require('../common/apiHandler');
+const { fetch1PMData, fetchPMMiniData, fetch3EMData, fetchDimmer2Data } = require('../common/apiHandler');
 const { getCurrentLogger } = require('../common/loggerManager');
 
 class Device {
@@ -22,6 +22,8 @@ class Device {
 				return fetch1PMData;
 			case 'PMMini':
 				return fetchPMMiniData;
+			case '3EM':
+				return fetch3EMData;
 			case 'Dimmer2':
 				return fetchDimmer2Data;
 			default:
